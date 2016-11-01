@@ -15,18 +15,18 @@ var server = http.createServer(function (req, res) {
         function (err, content) {
 
             if (err) {//hubo error
-                res.writeHead(500,{
-                    'Content-Type':"text/html"
+                res.writeHead(500, {
+                    'Content-Type': "text/html"
 
                 });
                 console.log('>error en la lectura de'.error +
-                'un archivo: ln20 server.js'.error);
+                    'un archivo: ln20 server.js'.error);
 
                 res.end("<h1>Error Interno</h1>")
 
             } else {//no hubo error
                 res.writeHead(200, {
-                    'Content-Type':'text/html'
+                    'Content-Type': 'text/html'
                 });
                 console.log('>sirviendo index.html');
                 res.end(content);
