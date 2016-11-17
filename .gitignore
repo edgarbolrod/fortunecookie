@@ -5,4 +5,3 @@ node_modules
 ./npm-debug.log
 
 #ignaorando los paquetes para e frontend
-static
