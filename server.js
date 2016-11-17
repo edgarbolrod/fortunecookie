@@ -1,17 +1,33 @@
 var http = require('http');
 var fs = require('fs');
-
+var mime = require('mime');
 var colors = require('colors');
-//estableciendo tema de colores
 
-colors.setTheme({
-    'data': 'cyan',
-    'info': 'rainbow',
-    'error': 'red'
-});
+//iportando el puerto configurador
+var config = require('./config/config');
+
+//estableciendo tema de colores
+colors.setTheme(config.colorTheme);
+//Importando configuraciones
+var IP =config.IP;
+var PORT =config.PORT;
 
 var server = http.createServer(function (req, res) {
-    fs.readFile('./static/index.html', 'utf8',
+    var url=req.url;
+    if(url === "/"){
+        url= '/index.html'
+    }
+
+    //generar la ruta real del archivo solicitado
+    
+
+
+    console.log(`>Recurso solicitado >${url}`.data);
+    var filePath='./static'+ url;
+    console.log(`>Se servira Archivo: ${filePath}`.data);
+    //seleccionar el tipo mime
+    var mimeType = mime.lookup(filePath);
+    fs.readFile(filePath,
         function (err, content) {
 
             if (err) {//hubo error
@@ -26,14 +42,14 @@ var server = http.createServer(function (req, res) {
 
             } else {//no hubo error
                 res.writeHead(200, {
-                    'Content-Type': 'text/html'
+                    'Content-Type': mimeType
                 });
-                console.log('>sirviendo index.html');
+                console.log(`>sirviendo: ${filePath}`.data );
                 res.end(content);
             }
         });
 });
 
-server.listen(3000, '127.0.0.1', function () {
-    console.log('>server corriendo en http://127.0.0.1:3000...'.info);
+server.listen(PORT,IP, function () {
+    console.log(`>server corriendo en http://${IP}:${PORT}...`.info);
 });
