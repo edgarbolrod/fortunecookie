@@ -13,6 +13,7 @@ colors.setTheme(config.colorTheme);
 var IP =config.IP;
 var PORT =config.PORT;
 
+//codigo del serserver
 var server = http.createServer(function (req, res) {
     var url=req.url;
     if(url === "/"){
@@ -24,6 +25,7 @@ var server = http.createServer(function (req, res) {
 
 
     console.log(`>Recurso solicitado >${url}`.data);
+    staticServer.serve(url, res);
 
 });
 
