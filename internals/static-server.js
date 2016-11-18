@@ -1,5 +1,5 @@
 
-exports.serve= function(res,url){
+exports.serve= function(url , res){
 var fs = require('fs');
 var mime = require('mime');
 
