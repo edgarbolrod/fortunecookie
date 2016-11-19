@@ -1,3 +1,3 @@
 function saludar() {
-    alert("hola chaka...");
+    swal("hola chaka...");
 }
