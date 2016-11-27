@@ -1,5 +1,3 @@
-
-
 //Creando el handler
 //getfortune
 
