@@ -7,6 +7,8 @@
 		type="image/png"
 		rel="shortcut icon" href="./img/favicon.png">
 	
+		<link rel="stylesheet" type="text/css" href="materialize-css/dist/css/materialize.min.css">
+
 		<!-- 	cargando estilo de sweetalert -->
 		<link rel="stylesheet" type="text/css" href="./vendor/sweetalert/dist/sweetalert.css">
 		<title>BOLAÑOS</title>
@@ -14,16 +16,25 @@
 	</head>
 	
 	<body>
-		<h1>pagina asombrosa</h1>
-	
-		<p>
-			Esta es la pagina mas asombrosa que jamas hayas visto en tu <strong>chaka </strong>vida.
-		</p>
+		<div class="parallax-container">
+    <div class="parallax"><img src="img/4.png"></div>
+  </div>
+  <div class="section teal lighten-2">
+    <div class="row container ">
+      <h1>pagina asombrosa</h1>
+      <p class="grey-text text-darken-3 lighten-3">Esta es la pagina mas asombrosa que jamas hayas visto en tu <strong>chaka </strong>vida.</p>
+    	<p><button onclick="getFortuneFromServer()">Push me , yea!!</button></p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="img/3.jpg"></div>
+  </div>
 		<!--<img src="./img/ITGAM.png" class="" >-->
 	
-		<p><button onclick="getFortuneFromServer()">Push me , yea!!</button></p>
+	
 		<script src="./vendor/jquery/dist/jquery.min.js"></script>
 		<script src="./vendor/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="./materialize-css/dist/js/materialize.min.js"></script>
 		<script src="./js/site.js">
 		</script>
 	

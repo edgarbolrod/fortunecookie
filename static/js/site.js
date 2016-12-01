@@ -9,3 +9,7 @@ function getFortuneFromServer(){
        swal(cookie.mensaje);
     },'json');
 }
+
+$(document).ready(function(){
+      $('.parallax').parallax();
+    });

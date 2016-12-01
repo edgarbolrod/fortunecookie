@@ -13,7 +13,7 @@ h1{
     inset 0 0 0 5px rgba(53.86.129.0.5),
     inset -285px 0 35 px white;
     border-radius: 0 10px 0 10px;
-    background: #fff url(../img/ITGAM.png) no-repeat center
+    background: #fff url(../img/ITGAM.png) 100%
 }
 
 p{
@@ -23,6 +23,13 @@ p{
 button{
     color: blue
 }
+
+.parallax-container {
+      width: 1420px; height: 500px;
+    }
+
+
+
 
 /*body{
    
