@@ -1,36 +1,32 @@
-var mongodb = require("mongodb");
+var mongo = require("mongodb");
+var mongoClient = mongo.MongoClient;
 
-var client = mongodb.MongoClient;
-var url ='mongodb://localhost:27017/fortuneapp';
-module.exports= {
-    "getFortune" : function(cb){
-
-client.connect(url,function(err, db){
-
-    if(err){
+module.exports = {
+    "getFortune": function (cb) {
+        
+        mongoClient.connect("mongodb://127.0.0.1:27017/fortuneapp",
+        function(err, db){
+             if(err){
         console.log("> Error en la conexion");
         throw err;
     }
-        console.log("prueba");
+            var papers = db.collection("fortunepapers");
 
-    var mensajes = db.collection("fortunepapers");
+            papers.find({}).toArray(function(err, documents){
+                 if(err){
+        console.log("> Error en al generar el arreglo");
+        throw err;
+    }
 
-   var resultado = mensajes.find({
-        
-    })
-    resultado.toArray(function(documentos){
-    
-        var selector = Math.floor(Math.random() * (max - min )+ min);
-        
-        //construyo un objeto respuesta
-        var fortuneMessage = documentos[selector];
-        var fortunePaperObject = JSON.stringify({
-            fortuneMessage
+                var selector = Math.round(Math.random(0)* documents.length);
+                console.log("El numero de tu fortuna es: " + selector);
+                
+                var fortunePaperObj = JSON.stringify(documents[selector]);
+               
+                db.close();
+               
+                cb(fortunePaperObj);
+            });
         });
-        db.close();
-        cb(fortunePaperObject);
-});
-    
-});
-        }
-    };
+    }
+};
