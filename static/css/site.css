@@ -1,8 +1,12 @@
 
-p{
+a{
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
     color: #263238
 
+}
+
+h3 {
+  font-variant: small-caps;
 }
 
 .parallax-container {
