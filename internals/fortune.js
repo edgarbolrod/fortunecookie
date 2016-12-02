@@ -4,7 +4,7 @@ var mongoClient = mongo.MongoClient;
 module.exports = {
     "getFortune": function (cb) {
         
-        mongoClient.connect("mongodb://127.0.0.1:27017/fortuneapp",
+        mongoClient.connect("mongodb://ebolanos:E.bolanos5@ds119588.mlab.com:19588/fortuneapp",
         function(err, db){
              if(err){
         console.log("> Error en la conexion");

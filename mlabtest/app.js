@@ -1,7 +1,7 @@
 var mongo = require("mongodb");
 var mongoClient = mongo.MongoClient;
 
-var connectionUrl = 'mongodb://ebolanos:E.bolanos505467@ds119588.mlab.com:19588/fortuneapp';
+var connectionUrl = 'mongodb://ebolanos:E.bolanos5@ds119588.mlab.com:19588/fortuneapp';
         
         mongoClient.connect(connectionUrl, function(err, db){
              if(err){

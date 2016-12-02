@@ -4,21 +4,15 @@ p{
     color: #263238
 
 }
-button{
-    color: blue
-}
 
 .parallax-container {
-      width: 1420px; height: 500px;
+      width: 1349px; height: 500px;
     }
     
     .carousel{
-        width: 1349px; height: 200px;
+        width: 1000px; height: 180px;
     }
     
-img{
-    width: 250px; height: 150px;
-}
 
 
 
